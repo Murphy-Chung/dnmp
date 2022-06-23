@@ -8,9 +8,11 @@ if [ "$supportLatest" -eq "1" ]; then
     curl -o /usr/bin/composer https://mirrors.aliyun.com/composer/composer.phar \
     && chmod +x /usr/bin/composer
 else
-    curl -o /tmp/composer-setup.php https://getcomposer.org/installer  \
-    && php /tmp/composer-setup.php --install-dir=/tmp \
-    && mv /tmp/composer.phar /usr/bin/composer \
-    && chmod +x /usr/bin/composer \
-    && rm -rf /tmp/composer-setup.php
+    # curl -o /tmp/composer-setup.php https://getcomposer.org/installer  \
+    # && php /tmp/composer-setup.php --install-dir=/tmp \
+    # && mv /tmp/composer.phar /usr/bin/composer \
+    # && chmod +x /usr/bin/composer \
+    # && rm -rf /tmp/composer-setup.php
+    curl -k -o /usr/bin/composer https://getcomposer.org/download/latest-2.2.x/composer.phar \
+    && chmod +x /usr/bin/composer
 fi
